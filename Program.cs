@@ -1,5 +1,5 @@
 ﻿using Project_1b.Entities;
-using System.Collections.Generic;
+using System.Globalization;
 
 List<Employee> employees = new List<Employee>();
 
@@ -17,13 +17,13 @@ for (int i = 0; i < numberEmployees; i++)
     System.Console.Write("Hours: ");
     int hours = int.Parse(Console.ReadLine());
     System.Console.Write("Value per hour: ");
-    double valuePerHour = double.Parse(Console.ReadLine());
+    double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
     double addionalCharge = 0.0;
 
     if (outsourced == 'y')
     {
         System.Console.Write("Additional charge: ");
-        addionalCharge = double.Parse(Console.ReadLine());
+        addionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
         employees.Add(new OutsourcedEmployee(name, hours, valuePerHour, addionalCharge));
     }
     else
